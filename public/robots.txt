@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sixoria.cm/sitemap.xml

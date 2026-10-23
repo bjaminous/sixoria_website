@@ -1,0 +1,273 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "digital": "Pôle Digital",
+    "trading": "Pôle Trading",
+    "services": "Services & Offres",
+    "about": "À propos",
+    "team": "Équipe",
+    "contact": "Contact",
+    "tagline": "Agiles pour vous."
+  },
+  "hero": {
+    "badge": "Entreprise familiale Camerounaise",
+    "title": "Agiles pour vous.",
+    "subtitle": "SIXORIA SARL unit deux pôles complémentaires — Digital et Trading — pour accompagner les entreprises et professionnels avec agilité, confiance et expertise.",
+    "cta_services": "Découvrir nos services",
+    "cta_quote": "Demander un devis",
+    "cta_whatsapp": "WhatsApp",
+    "scroll_hint": "Découvrir"
+  },
+  "poles": {
+    "title": "Deux pôles, une vision",
+    "subtitle": "SIXORIA structure son activité autour de deux expertises complémentaires pour mieux vous servir.",
+    "digital": {
+      "title": "Pôle Digital",
+      "description": "Accompagnement numérique, développement web, automatisation et solutions digitales pour transformer votre activité.",
+      "cta": "En savoir plus"
+    },
+    "trading": {
+      "title": "Pôle Trading",
+      "description": "Commerce et distribution de produits pour les professionnels, entreprises et institutions en Afrique.",
+      "cta": "En savoir plus"
+    }
+  },
+  "offers": {
+    "title": "Offres de lancement",
+    "subtitle": "Des packs conçus pour accompagner le démarrage et la croissance de votre activité. Tarifs et contenus à finaliser avec l'équipe SIXORIA.",
+    "badge": "Offre de lancement",
+    "contact_cta": "Demander un devis",
+    "pme": {
+      "title": "Démarrage PME",
+      "description": "Un pack d'entrée pour les petites entreprises souhaitant établir leur présence digitale et professionnelle.",
+      "features": [
+        "Création de site web vitrine",
+        "Configuration e-mail professionnel",
+        "Présence sur les réseaux sociaux",
+        "Formation à l'utilisation des outils"
+      ]
+    },
+    "office": {
+      "title": "Bureau Équipé",
+      "description": "Fourniture et installation de matériel de bureau pour les structures en phase de démarrage ou d'expansion.",
+      "features": [
+        "Mobilier et équipements de bureau",
+        "Matériel informatique",
+        "Fournitures de bureau",
+        "Livraison et installation incluses"
+      ]
+    },
+    "digital": {
+      "title": "Digitalisation",
+      "description": "Accompagnement complet pour la transformation numérique de votre entreprise ou institution.",
+      "features": [
+        "Audit de vos outils existants",
+        "Mise en place de solutions adaptées",
+        "Formation des équipes",
+        "Support et maintenance"
+      ]
+    }
+  },
+  "values": {
+    "title": "Ce qui nous distingue",
+    "subtitle": "SIXORIA est fondée sur des valeurs humaines et professionnelles qui guident chacune de nos actions.",
+    "agility": {
+      "title": "Agilité",
+      "description": "Nous nous adaptons rapidement à vos besoins et aux évolutions du marché pour vous offrir les meilleures solutions."
+    },
+    "trust": {
+      "title": "Confiance",
+      "description": "Chaque engagement est tenu. La confiance que vous nous accordez est notre bien le plus précieux."
+    },
+    "innovation": {
+      "title": "Innovation",
+      "description": "Nous explorons et adoptons les meilleures pratiques pour vous offrir des solutions modernes et efficaces."
+    },
+    "collaboration": {
+      "title": "Collaboration",
+      "description": "Six compétences, une équipe. La complémentarité de nos associés est notre force collective."
+    },
+    "proximity": {
+      "title": "Proximité",
+      "description": "Ancrés au Cameroun, ouverts à l'Afrique et au monde. Votre succès est notre mission locale et globale."
+    },
+    "excellence": {
+      "title": "Excellence",
+      "description": "Nous visons le meilleur dans chaque réalisation, quelle que soit la taille du projet."
+    }
+  },
+  "cta_section": {
+    "title": "Prêt à démarrer votre projet ?",
+    "subtitle": "Contactez l'équipe SIXORIA pour discuter de vos besoins. Nous vous répondons dans les meilleurs délais.",
+    "cta_contact": "Nous contacter",
+    "cta_quote": "Demander un devis"
+  },
+  "digital": {
+    "hero_title": "Pôle Digital",
+    "hero_subtitle": "Solutions numériques pour accompagner la croissance de votre entreprise.",
+    "intro_title": "Notre approche digitale",
+    "intro_text": "Le Pôle Digital de SIXORIA accompagne les entreprises dans leur transformation numérique. Nos services sont en cours de validation et de structuration par les associés avant leur mise sur le marché officielle.",
+    "notice": "Les services ci-dessous sont présentés à titre indicatif. Leur disponibilité et leurs tarifs seront confirmés par l'équipe SIXORIA.",
+    "web_title": "Développement Web",
+    "web_desc": "Création de sites vitrine, portails web et applications sur mesure adaptés à vos objectifs.",
+    "auto_title": "Automatisation",
+    "auto_desc": "Automatisation de processus métier, intégration d'outils et gain de productivité.",
+    "support_title": "Accompagnement Numérique",
+    "support_desc": "Formation, conseil et support pour une adoption réussie des outils digitaux.",
+    "solutions_title": "Solutions Digitales",
+    "solutions_desc": "Déploiement de logiciels, CRM, ERP et plateformes adaptés à votre secteur.",
+    "exploration_title": "Projets en réflexion",
+    "exploration_subtitle": "SIXORIA explore des opportunités dans des domaines à fort impact social. Ces projets ne sont pas encore disponibles comme services.",
+    "patient_title": "Plateforme de suivi des patients chroniques",
+    "patient_desc": "Plateforme numérique pour faciliter le suivi médical des patients atteints de maladies chroniques, en cours de conception avec des professionnels de santé.",
+    "patient_badge": "En cours de réflexion"
+  },
+  "trading": {
+    "hero_title": "Pôle Trading",
+    "hero_subtitle": "Commerce et distribution de produits pour les professionnels et institutions.",
+    "intro_title": "Notre activité commerciale",
+    "intro_text": "Le Pôle Trading de SIXORIA se spécialise dans la sourcing, la distribution et la fourniture de produits pour les entreprises, institutions et professionnels. Nos catégories et produits sont en cours de structuration.",
+    "notice": "Les produits et catégories présentés ici sont indicatifs. Les disponibilités, prix et délais sont à confirmer sur demande.",
+    "categories_title": "Catégories de produits",
+    "office_supplies": "Fournitures de bureau",
+    "office_supplies_desc": "Matériel et consommables pour équiper vos espaces professionnels.",
+    "tech_equipment": "Équipement informatique",
+    "tech_equipment_desc": "Ordinateurs, imprimantes et périphériques pour vos besoins professionnels.",
+    "furniture": "Mobilier professionnel",
+    "furniture_desc": "Mobilier de bureau adapté aux environnements professionnels et institutionnels.",
+    "other": "Autres produits",
+    "other_desc": "D'autres catégories seront disponibles à mesure que notre offre se structurera.",
+    "quote_title": "Demande de prix",
+    "quote_desc": "Pour toute demande de produit ou de devis, contactez notre équipe. Nous vous répondons dans les meilleurs délais avec une offre personnalisée.",
+    "quote_cta": "Faire une demande"
+  },
+  "about": {
+    "hero_title": "À propos de SIXORIA",
+    "hero_subtitle": "Une entreprise familiale fondée sur la complémentarité, la confiance et l'ambition collective.",
+    "story_title": "Notre histoire",
+    "story_p1": "SIXORIA SARL est née de la rencontre de six associés aux profils complémentaires, animés par une vision commune : créer une entreprise agile, moderne et ancrée dans les réalités africaines tout en visant l'excellence internationale.",
+    "story_p2": "Le nom SIXORIA lui-même porte en lui l'empreinte de ses fondateurs : six individus, six compétences, une seule ambition. Le logo géométrique bi-partite — bleu et or — symbolise l'union de ces forces complémentaires.",
+    "story_p3": "Fondée à Yaoundé, Cameroun, l'entreprise développe deux pôles complémentaires — Digital et Trading — pour répondre à un large spectre de besoins professionnels et institutionnels.",
+    "team_title": "L'équipe fondatrice",
+    "team_subtitle": "Six associés aux expertises complémentaires, unis par la vision SIXORIA.",
+    "team_notice": "Les biographies détaillées et photos des associés seront ajoutées après validation de l'équipe.",
+    "member_placeholder": "Associé·e SIXORIA",
+    "role_placeholder": "Fonction à préciser",
+    "mission_title": "Notre mission",
+    "mission_text": "Accompagner les entreprises, professionnels et institutions avec des solutions digitales et commerciales adaptées, fiables et accessibles — en Afrique et à l'international.",
+    "vision_title": "Notre vision",
+    "vision_text": "Devenir un partenaire de référence pour la transformation digitale et le développement commercial des organisations en Afrique centrale et au-delà.",
+    "values_title": "Nos valeurs fondatrices",
+    "domain_title": "Domaine & Contact",
+    "domain_text": "Site web : sixoria.cm — E-mail : contact@sixoria.cm"
+  },
+  "team": {
+    "hero_title": "Notre Équipe",
+    "hero_subtitle": "Quatre associés connus, deux en cours de finalisation. Six talents, une ambition commune.",
+    "intro": "SIXORIA SARL est portée par six associés aux profils complémentaires. Voici les quatre membres dont les informations nous ont été communiquées. Les deux autres seront présentés prochainement.",
+    "photo_placeholder": "Photo à venir",
+    "email_label": "Écrire à",
+    "pending_title": "Deux associés supplémentaires",
+    "pending_text": "SIXORIA SARL est composée de six associés. Les informations des deux autres membres seront ajoutées prochainement après validation par l'équipe.",
+    "contact_team": "Contacter l'équipe",
+    "members": {
+      "hapsatou": {
+        "name": "Hapsatou",
+        "role": "Co-Fondatrice & Gérante",
+        "email": "hapsatou@sixoria.cm",
+        "pole": "Direction générale"
+      },
+      "inoussa": {
+        "name": "Inoussa",
+        "role": "Co-Fondateur & Consultant Senior",
+        "email": "inoussa@sixoria.cm",
+        "pole": "Conseil & Stratégie"
+      },
+      "jamila": {
+        "name": "Jamila",
+        "role": "Responsable Technique & Innovation",
+        "email": "beulguibe@sixoria.cm",
+        "pole": "Pôle Digital"
+      },
+      "yasmine": {
+        "name": "Yasmine",
+        "role": "Responsable Administrative & Financière",
+        "email": "ladi@sixoria.cm",
+        "pole": "Administration & Finance"
+      }
+    }
+  },
+  "contact": {
+    "hero_title": "Contactez-nous",
+    "hero_subtitle": "Une question, un projet ou une demande de devis ? Nous sommes à votre écoute.",
+    "form_title": "Envoyer un message",
+    "name": "Nom complet",
+    "company": "Entreprise (facultatif)",
+    "email": "Adresse e-mail",
+    "phone": "Téléphone (facultatif)",
+    "pole": "Pôle concerné",
+    "pole_digital": "Pôle Digital",
+    "pole_trading": "Pôle Trading",
+    "pole_both": "Les deux pôles",
+    "pole_other": "Autre",
+    "subject": "Objet",
+    "message": "Votre message",
+    "submit": "Envoyer le message",
+    "submitting": "Envoi en cours...",
+    "success_title": "Message envoyé !",
+    "success_text": "Merci pour votre message. L'équipe SIXORIA vous répondra dans les meilleurs délais.",
+    "error_text": "Une erreur est survenue. Veuillez réessayer ou nous contacter directement par e-mail.",
+    "whatsapp_cta": "Contacter via WhatsApp",
+    "whatsapp_notice": "Le numéro WhatsApp officiel sera communiqué par l'équipe SIXORIA.",
+    "email_label": "E-mail",
+    "website_label": "Site web",
+    "location_label": "Localisation",
+    "location_value": "Yaoundé, Cameroun",
+    "quote_title": "Demande de devis",
+    "quote_desc": "Pour une demande de devis rapide, remplissez le formulaire en précisant vos besoins. Nous vous répondrons avec une proposition personnalisée.",
+    "required": "Champ obligatoire",
+    "emailjs_notice": "⚙️ Configuration requise : ce formulaire nécessite un service d'envoi (EmailJS ou autre) à configurer dans les variables d'environnement.",
+    "team_contacts": "Contacts de l'équipe"
+  },
+  "legal": {
+    "title": "Mentions légales & Confidentialité",
+    "notice": "Ce document est un modèle de mentions légales. Il doit être révisé et validé par les associés de SIXORIA SARL avant publication, notamment concernant le numéro RCCM, l'adresse physique et les informations juridiques officielles.",
+    "company_title": "Informations sur l'entreprise",
+    "company_name": "Raison sociale : SIXORIA SARL",
+    "company_country": "Pays : Cameroun",
+    "company_email": "Contact : contact@sixoria.cm",
+    "company_website": "Site : sixoria.cm",
+    "company_rccm": "RCCM : [À compléter par l'équipe SIXORIA]",
+    "company_address": "Adresse : [À compléter par l'équipe SIXORIA]",
+    "privacy_title": "Politique de confidentialité",
+    "privacy_text": "SIXORIA SARL s'engage à protéger les données personnelles de ses visiteurs. Les informations collectées via les formulaires sont utilisées uniquement pour répondre à vos demandes et ne sont pas transmises à des tiers sans votre consentement.",
+    "hosting_title": "Hébergement",
+    "hosting_text": "Le site sixoria.cm est hébergé par [Hébergeur à préciser]. Ses coordonnées seront ajoutées après la mise en production."
+  },
+  "footer": {
+    "tagline": "Agiles pour vous.",
+    "description": "Entreprise familiale camerounaise alliant expertise digitale et commerce. Deux pôles, une vision : vous accompagner avec agilité et confiance.",
+    "quick_links": "Liens rapides",
+    "poles": "Nos pôles",
+    "legal": "Légal",
+    "legal_mentions": "Mentions légales",
+    "privacy": "Confidentialité",
+    "contact_us": "Nous contacter",
+    "rights": "Tous droits réservés.",
+    "made_with": "Fait avec ♥ au Cameroun"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "back_home": "Retour à l'accueil",
+    "read_more": "Lire plus",
+    "contact_us": "Nous contacter",
+    "request_quote": "Demander un devis",
+    "discover": "Découvrir",
+    "learn_more": "En savoir plus",
+    "coming_soon": "Bientôt disponible",
+    "placeholder_info": "Information à compléter",
+    "validate_before_publish": "À valider avant publication",
+    "page_not_found": "Page introuvable",
+    "page_not_found_text": "La page que vous cherchez n'existe pas ou a été déplacée."
+  }
+}

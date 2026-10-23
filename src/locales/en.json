@@ -1,0 +1,273 @@
+{
+    "nav": {
+        "home": "Home",
+        "digital": "Digital Division",
+        "trading": "Trading Division",
+        "services": "Services & Offers",
+        "about": "About",
+        "team": "Team",
+        "contact": "Contact",
+        "tagline": "Agile for you."
+    },
+    "hero": {
+        "badge": "Cameroonian Family Business",
+        "title": "Agile for you.",
+        "subtitle": "SIXORIA SARL combines two complementary divisions — Digital and Trading — to support businesses and professionals with agility, trust, and expertise.",
+        "cta_services": "Explore our services",
+        "cta_quote": "Request a quote",
+        "cta_whatsapp": "WhatsApp",
+        "scroll_hint": "Discover"
+    },
+    "poles": {
+        "title": "Two divisions, one vision",
+        "subtitle": "SIXORIA structures its activity around two complementary areas of expertise to better serve you.",
+        "digital": {
+            "title": "Digital Division",
+            "description": "Digital support, web development, automation and digital solutions to transform your business.",
+            "cta": "Learn more"
+        },
+        "trading": {
+            "title": "Trading Division",
+            "description": "Commerce and product distribution for professionals, businesses and institutions in Africa.",
+            "cta": "Learn more"
+        }
+    },
+    "offers": {
+        "title": "Launch Offers",
+        "subtitle": "Packs designed to support the start and growth of your activity. Prices and contents to be finalized with the SIXORIA team.",
+        "badge": "Launch offer",
+        "contact_cta": "Request a quote",
+        "pme": {
+            "title": "SME Starter",
+            "description": "An entry pack for small businesses looking to establish their professional and digital presence.",
+            "features": [
+                "Business website creation",
+                "Professional email setup",
+                "Social media presence",
+                "Tools usage training"
+            ]
+        },
+        "office": {
+            "title": "Equipped Office",
+            "description": "Supply and installation of office equipment for structures in the start-up or expansion phase.",
+            "features": [
+                "Office furniture and equipment",
+                "Computer hardware",
+                "Office supplies",
+                "Delivery and installation included"
+            ]
+        },
+        "digital": {
+            "title": "Digitalization",
+            "description": "Complete support for the digital transformation of your company or institution.",
+            "features": [
+                "Audit of your existing tools",
+                "Implementation of adapted solutions",
+                "Team training",
+                "Support and maintenance"
+            ]
+        }
+    },
+    "values": {
+        "title": "What sets us apart",
+        "subtitle": "SIXORIA is founded on human and professional values that guide each of our actions.",
+        "agility": {
+            "title": "Agility",
+            "description": "We adapt quickly to your needs and market developments to offer you the best solutions."
+        },
+        "trust": {
+            "title": "Trust",
+            "description": "Every commitment is kept. The trust you place in us is our most precious asset."
+        },
+        "innovation": {
+            "title": "Innovation",
+            "description": "We explore and adopt best practices to offer you modern, effective solutions."
+        },
+        "collaboration": {
+            "title": "Collaboration",
+            "description": "Six skills, one team. The complementarity of our partners is our collective strength."
+        },
+        "proximity": {
+            "title": "Proximity",
+            "description": "Rooted in Cameroon, open to Africa and the world. Your success is our local and global mission."
+        },
+        "excellence": {
+            "title": "Excellence",
+            "description": "We aim for the best in every achievement, regardless of the size of the project."
+        }
+    },
+    "cta_section": {
+        "title": "Ready to start your project?",
+        "subtitle": "Contact the SIXORIA team to discuss your needs. We respond as quickly as possible.",
+        "cta_contact": "Contact us",
+        "cta_quote": "Request a quote"
+    },
+    "digital": {
+        "hero_title": "Digital Division",
+        "hero_subtitle": "Digital solutions to support the growth of your business.",
+        "intro_title": "Our digital approach",
+        "intro_text": "SIXORIA's Digital Division supports companies in their digital transformation. Our services are being validated and structured by the partners before their official market launch.",
+        "notice": "The services below are presented for informational purposes. Their availability and pricing will be confirmed by the SIXORIA team.",
+        "web_title": "Web Development",
+        "web_desc": "Creation of showcase sites, web portals and custom applications adapted to your objectives.",
+        "auto_title": "Automation",
+        "auto_desc": "Business process automation, tool integration and productivity gains.",
+        "support_title": "Digital Support",
+        "support_desc": "Training, consulting and support for successful adoption of digital tools.",
+        "solutions_title": "Digital Solutions",
+        "solutions_desc": "Deployment of software, CRM, ERP and platforms adapted to your sector.",
+        "exploration_title": "Projects in reflection",
+        "exploration_subtitle": "SIXORIA explores opportunities in high social impact areas. These projects are not yet available as services.",
+        "patient_title": "Chronic patient monitoring platform",
+        "patient_desc": "Digital platform to facilitate medical monitoring of patients with chronic diseases, currently being designed with healthcare professionals.",
+        "patient_badge": "Under consideration"
+    },
+    "trading": {
+        "hero_title": "Trading Division",
+        "hero_subtitle": "Commerce and product distribution for professionals and institutions.",
+        "intro_title": "Our commercial activity",
+        "intro_text": "SIXORIA's Trading Division specializes in sourcing, distribution and supply of products for businesses, institutions and professionals. Our categories and products are being structured.",
+        "notice": "The products and categories presented here are indicative. Availability, prices and lead times are to be confirmed on request.",
+        "categories_title": "Product categories",
+        "office_supplies": "Office supplies",
+        "office_supplies_desc": "Materials and consumables to equip your professional spaces.",
+        "tech_equipment": "IT equipment",
+        "tech_equipment_desc": "Computers, printers and peripherals for your professional needs.",
+        "furniture": "Professional furniture",
+        "furniture_desc": "Office furniture adapted to professional and institutional environments.",
+        "other": "Other products",
+        "other_desc": "Other categories will be available as our offer takes shape.",
+        "quote_title": "Price request",
+        "quote_desc": "For any product or quote request, contact our team. We respond promptly with a personalized offer.",
+        "quote_cta": "Make a request"
+    },
+    "about": {
+        "hero_title": "About SIXORIA",
+        "hero_subtitle": "A family business founded on complementarity, trust and collective ambition.",
+        "story_title": "Our story",
+        "story_p1": "SIXORIA SARL was born from the meeting of six partners with complementary profiles, driven by a common vision: to create an agile, modern company rooted in African realities while aiming for international excellence.",
+        "story_p2": "The name SIXORIA itself bears the mark of its founders: six individuals, six skills, one ambition. The two-part geometric logo — blue and gold — symbolizes the union of these complementary strengths.",
+        "story_p3": "Founded in Yaoundé, Cameroon, the company is developing two complementary divisions — Digital and Trading — to meet a wide range of professional and institutional needs.",
+        "team_title": "The founding team",
+        "team_subtitle": "Six partners with complementary expertise, united by the SIXORIA vision.",
+        "team_notice": "Detailed biographies and photos of the partners will be added after team validation.",
+        "member_placeholder": "SIXORIA Partner",
+        "role_placeholder": "Role to be specified",
+        "mission_title": "Our mission",
+        "mission_text": "To support businesses, professionals and institutions with digital and commercial solutions that are adapted, reliable and accessible — in Africa and internationally.",
+        "vision_title": "Our vision",
+        "vision_text": "To become a reference partner for digital transformation and business development of organizations in Central Africa and beyond.",
+        "values_title": "Our founding values",
+        "domain_title": "Domain & Contact",
+        "domain_text": "Website: sixoria.cm — Email: contact@sixoria.cm"
+    },
+    "team": {
+        "hero_title": "Our Team",
+        "hero_subtitle": "Four known partners, two finalizing their profiles. Six talents, one shared ambition.",
+        "intro": "SIXORIA SARL is driven by six partners with complementary profiles. Here are the four members whose information has been shared with us. The other two will be introduced soon.",
+        "photo_placeholder": "Photo coming soon",
+        "email_label": "Write to",
+        "pending_title": "Two additional partners",
+        "pending_text": "SIXORIA SARL is made up of six partners. The information of the two other members will be added soon after team validation.",
+        "contact_team": "Contact the team",
+        "members": {
+            "hapsatou": {
+                "name": "Hapsatou",
+                "role": "Co-Founder & Managing Director",
+                "email": "hapsatou@sixoria.cm",
+                "pole": "General Management"
+            },
+            "inoussa": {
+                "name": "Inoussa",
+                "role": "Co-Founder & Senior Consultant",
+                "email": "inoussa@sixoria.cm",
+                "pole": "Consulting & Strategy"
+            },
+            "jamila": {
+                "name": "Jamila",
+                "role": "Head of Technology & Innovation",
+                "email": "beulguibe@sixoria.cm",
+                "pole": "Digital Division"
+            },
+            "yasmine": {
+                "name": "Yasmine",
+                "role": "Head of Administration & Finance",
+                "email": "ladi@sixoria.cm",
+                "pole": "Administration & Finance"
+            }
+        }
+    },
+    "contact": {
+        "hero_title": "Contact us",
+        "hero_subtitle": "A question, a project or a quote request? We are listening.",
+        "form_title": "Send a message",
+        "name": "Full name",
+        "company": "Company (optional)",
+        "email": "Email address",
+        "phone": "Phone (optional)",
+        "pole": "Division concerned",
+        "pole_digital": "Digital Division",
+        "pole_trading": "Trading Division",
+        "pole_both": "Both divisions",
+        "pole_other": "Other",
+        "subject": "Subject",
+        "message": "Your message",
+        "submit": "Send message",
+        "submitting": "Sending...",
+        "success_title": "Message sent!",
+        "success_text": "Thank you for your message. The SIXORIA team will get back to you as soon as possible.",
+        "error_text": "An error occurred. Please try again or contact us directly by email.",
+        "whatsapp_cta": "Contact via WhatsApp",
+        "whatsapp_notice": "The official WhatsApp number will be communicated by the SIXORIA team.",
+        "email_label": "Email",
+        "website_label": "Website",
+        "location_label": "Location",
+        "location_value": "Yaoundé, Cameroon",
+        "quote_title": "Quote request",
+        "quote_desc": "For a quick quote request, fill in the form specifying your needs. We will respond with a personalized proposal.",
+        "required": "Required field",
+        "emailjs_notice": "⚙️ Configuration required: this form requires a sending service (EmailJS or other) to be configured in environment variables.",
+        "team_contacts": "Team contacts"
+    },
+    "legal": {
+        "title": "Legal Notice & Privacy Policy",
+        "notice": "This document is a template for legal notices. It must be reviewed and validated by SIXORIA SARL's partners before publication, particularly regarding the RCCM number, physical address and official legal information.",
+        "company_title": "Company Information",
+        "company_name": "Company name: SIXORIA SARL",
+        "company_country": "Country: Cameroon",
+        "company_email": "Contact: contact@sixoria.cm",
+        "company_website": "Website: sixoria.cm",
+        "company_rccm": "RCCM: [To be completed by the SIXORIA team]",
+        "company_address": "Address: [To be completed by the SIXORIA team]",
+        "privacy_title": "Privacy Policy",
+        "privacy_text": "SIXORIA SARL is committed to protecting the personal data of its visitors. Information collected through forms is used solely to respond to your requests and is not transmitted to third parties without your consent.",
+        "hosting_title": "Hosting",
+        "hosting_text": "The sixoria.cm website is hosted by [Host to be specified]. Contact details will be added after production launch."
+    },
+    "footer": {
+        "tagline": "Agile for you.",
+        "description": "Cameroonian family business combining digital expertise and commerce. Two divisions, one vision: supporting you with agility and trust.",
+        "quick_links": "Quick links",
+        "poles": "Our divisions",
+        "legal": "Legal",
+        "legal_mentions": "Legal notice",
+        "privacy": "Privacy policy",
+        "contact_us": "Contact us",
+        "rights": "All rights reserved.",
+        "made_with": "Made with ♥ in Cameroon"
+    },
+    "common": {
+        "loading": "Loading...",
+        "back_home": "Back to home",
+        "read_more": "Read more",
+        "contact_us": "Contact us",
+        "request_quote": "Request a quote",
+        "discover": "Discover",
+        "learn_more": "Learn more",
+        "coming_soon": "Coming soon",
+        "placeholder_info": "Information to be completed",
+        "validate_before_publish": "To be validated before publication",
+        "page_not_found": "Page not found",
+        "page_not_found_text": "The page you are looking for does not exist or has been moved."
+    }
+}
