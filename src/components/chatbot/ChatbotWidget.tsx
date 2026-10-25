@@ -24,6 +24,7 @@ const ChatbotWidget: React.FC = () => {
         suggestions,
         showSuggestions,
         language,
+        isDemoMode,
     } = useChatbot();
 
     const windowRef = useRef<HTMLDivElement>(null);

@@ -48,41 +48,69 @@ const SUGGESTIONS: SuggestionItem[] = [
         emoji: '📞',
         label: 'Contacter notre équipe',
         labelEn: 'Contact our team',
-        message: 'Comment puis-je contacter l\'équipe SIXORIA ?',
+        message: "Comment puis-je contacter l'équipe SIXORIA ?",
         messageEn: 'How can I contact the SIXORIA team?',
     },
 ];
 
+// ============================================================
+//  Réponses de démonstration (mode sans API)
+// ============================================================
+function getDemoResponse(message: string, language: 'fr' | 'en'): string {
+    const msg = message.toLowerCase();
+
+    if (language === 'en') {
+        if (msg.includes('digital') || msg.includes('web') || msg.includes('app')) {
+            return "SIXORIA's **Digital Division** offers:\n\n• Custom website creation (showcase, e-commerce)\n• Business process automation\n• Digital support and training\n• Software and platform deployment (CRM, ERP)\n\n⚠️ *Demo mode* — Responses are based on official SIXORIA data. To enable the AI assistant, configure the API key server-side.\n\nWould you like to know more about one of these services?";
+        }
+        if (msg.includes('trading') || msg.includes('product') || msg.includes('equipment')) {
+            return "SIXORIA's **Trading Division** specializes in sourcing, distribution, and supply of products for businesses and institutions.\n\nProduct categories:\n• Office supplies\n• IT equipment\n• Professional furniture\n\n⚠️ *Demo mode* — Prices and availability must be confirmed by the SIXORIA team.\n\nWould you like to request a quote?";
+        }
+        if (msg.includes('quote') || msg.includes('price') || msg.includes('cost')) {
+            return "I'd be happy to help you prepare a quote request!\n\nCould you tell me more about your project?\n1. Showcase website\n2. E-commerce site\n3. Web application\n4. Office equipment\n5. Other\n\n⚠️ *Demo mode* — To send a complete quote request, use the contact form on our site or write to contact@sixoria.cm";
+        }
+        if (msg.includes('contact') || msg.includes('team') || msg.includes('email')) {
+            return "To contact the SIXORIA team:\n\n• **General**: contact@sixoria.cm\n• **Technical (Jamila)**: beulguibe@sixoria.cm\n• **Administrative (Yasmine)**: ladi@sixoria.cm\n• **Strategy (Inoussa)**: inoussa@sixoria.cm\n• **Management (Hapsatou)**: hapsatou@sixoria.cm\n\n⚠️ *Demo mode* — For a real conversation with our AI, ask your administrator to configure the API key.";
+        }
+        return "Thank you for your message! 😊\n\n⚠️ **Demo mode** — SIXORIA AI is currently running without an AI connection.\n\nI can answer questions about:\n• Our Digital Division\n• Our Trading Division\n• Quote requests\n• Contact information\n\nWhat would you like to know?";
+    }
+
+    // French responses
+    if (msg.includes('digital') || msg.includes('web') || msg.includes('site') || msg.includes('application') || msg.includes('numérique')) {
+        return "Le **Pôle Digital de SIXORIA** propose :\n\n• Création de sites web sur mesure (vitrine, e-commerce)\n• Automatisation de processus métier\n• Accompagnement numérique et formation\n• Déploiement de logiciels et plateformes (CRM, ERP)\n\n⚠️ *Mode démonstration* — Les réponses sont basées sur les données officielles SIXORIA. Pour activer l'assistant IA complet, configurez la clé API côté serveur.\n\nSouhaitez-vous en savoir plus sur l'un de ces services ?";
+    }
+    if (msg.includes('trading') || msg.includes('produit') || msg.includes('équipement') || msg.includes('mobilier') || msg.includes('fourniture')) {
+        return "Le **Pôle Trading de SIXORIA** se spécialise dans le sourcing, la distribution et la fourniture de produits pour les entreprises et institutions.\n\nCatégories de produits :\n• Fournitures de bureau\n• Équipement informatique\n• Mobilier professionnel\n\n⚠️ *Mode démonstration* — Les prix et disponibilités sont à confirmer par l'équipe SIXORIA.\n\nSouhaitez-vous demander un devis ?";
+    }
+    if (msg.includes('devis') || msg.includes('prix') || msg.includes('coût') || msg.includes('tarif')) {
+        return "Je serais ravi de vous aider à préparer une demande de devis !\n\nPourriez-vous me preciser votre besoin ?\n1. Site vitrine\n2. Boutique en ligne\n3. Application web\n4. Équipement de bureau\n5. Autre\n\n⚠️ *Mode démonstration* — Pour envoyer une demande de devis complète, utilisez le formulaire de contact sur notre site ou écrivez à contact@sixoria.cm";
+    }
+    if (msg.includes('contact') || msg.includes('équipe') || msg.includes('email') || msg.includes('joindre') || msg.includes('appeler')) {
+        return "Pour contacter l'équipe SIXORIA :\n\n• **Général** : contact@sixoria.cm\n• **Technique (Jamila)** : beulguibe@sixoria.cm\n• **Administratif (Yasmine)** : ladi@sixoria.cm\n• **Stratégie (Inoussa)** : inoussa@sixoria.cm\n• **Direction (Hapsatou)** : hapsatou@sixoria.cm\n\n⚠️ *Mode démonstration* — Pour une vraie conversation avec notre IA, demandez à votre administrateur de configurer la clé API.";
+    }
+    if (msg.includes('bonjour') || msg.includes('bonsoir') || msg.includes('salut') || msg.includes('hello')) {
+        return "Bonjour ! 👋 Je suis SIXORIA AI, votre assistant virtuel.\n\nJe suis en **mode démonstration** (sans connexion IA active), mais je peux tout de même vous renseigner sur :\n• Nos services du Pôle Digital\n• Nos produits du Pôle Trading\n• Les demandes de devis\n• Nos coordonnées\n\nComment puis-je vous aider aujourd'hui ?";
+    }
+    return "Merci pour votre message ! 😊\n\n⚠️ **Mode démonstration** — SIXORIA AI fonctionne actuellement sans connexion IA.\n\nJe peux répondre à vos questions sur :\n• Notre Pôle Digital\n• Notre Pôle Trading\n• Les demandes de devis\n• Nos coordonnées\n\nQue souhaitez-vous savoir ?";
+}
+
 export interface UseChatbotReturn {
-    // État de la fenêtre
     chatbotState: ChatbotState;
     openChatbot: () => void;
     closeChatbot: () => void;
     minimizeChatbot: () => void;
-
-    // Messages
     messages: ChatMessage[];
     isLoading: boolean;
     inputValue: string;
     setInputValue: (v: string) => void;
-
-    // Actions
     sendMessage: (content?: string) => Promise<void>;
     clearConversation: () => void;
-
-    // Suggestions
     suggestions: SuggestionItem[];
     showSuggestions: boolean;
-
-    // Langue
     language: 'fr' | 'en';
-
-    // Erreur
     lastError: string | null;
+    isDemoMode: boolean;
 }
-
-import type { SuggestionItem as SI } from '../types/chatbot';
-export type { SI as SuggestionItemType };
 
 export function useChatbot(): UseChatbotReturn {
     const { i18n } = useTranslation();
@@ -95,6 +123,7 @@ export function useChatbot(): UseChatbotReturn {
     const [lastError, setLastError] = useState<string | null>(null);
     const [showSuggestions, setShowSuggestions] = useState(true);
     const [hasLoadedSession, setHasLoadedSession] = useState(false);
+    const [isDemoMode, setIsDemoMode] = useState(false);
 
     const abortControllerRef = useRef<AbortController | null>(null);
 
@@ -117,7 +146,7 @@ export function useChatbot(): UseChatbotReturn {
         }
     }, [messages]);
 
-    // Message d'accueil en fonction de la langue
+    // Message d'accueil
     const getWelcomeMessage = useCallback((): ChatMessage => {
         const content =
             language === 'en'
@@ -135,20 +164,15 @@ export function useChatbot(): UseChatbotReturn {
     const openChatbot = useCallback(() => {
         setChatbotState('open');
         if (!hasLoadedSession) return;
-        // Si aucun message, afficher le message d'accueil
         setMessages((prev) => {
-            if (prev.length === 0) {
-                return [getWelcomeMessage()];
-            }
+            if (prev.length === 0) return [getWelcomeMessage()];
             return prev;
         });
     }, [getWelcomeMessage, hasLoadedSession]);
 
     const closeChatbot = useCallback(() => {
         setChatbotState('idle');
-        if (abortControllerRef.current) {
-            abortControllerRef.current.abort();
-        }
+        if (abortControllerRef.current) abortControllerRef.current.abort();
     }, []);
 
     const minimizeChatbot = useCallback(() => {
@@ -156,17 +180,15 @@ export function useChatbot(): UseChatbotReturn {
     }, []);
 
     const clearConversation = useCallback(() => {
-        if (abortControllerRef.current) {
-            abortControllerRef.current.abort();
-        }
+        if (abortControllerRef.current) abortControllerRef.current.abort();
         setMessages([getWelcomeMessage()]);
         setShowSuggestions(true);
         setLastError(null);
         setInputValue('');
+        setIsDemoMode(false);
         clearSessionStorage();
     }, [getWelcomeMessage]);
 
-    // Ouvrir avec message d'accueil quand on change d'état idle → open
     useEffect(() => {
         if (chatbotState === 'open' && hasLoadedSession && messages.length === 0) {
             setMessages([getWelcomeMessage()]);
@@ -176,7 +198,6 @@ export function useChatbot(): UseChatbotReturn {
     const sendMessage = useCallback(
         async (content?: string) => {
             const text = (content ?? inputValue).trim();
-
             if (!text) return;
             if (text.length > MAX_MESSAGE_LENGTH) {
                 setLastError(
@@ -186,13 +207,9 @@ export function useChatbot(): UseChatbotReturn {
                 );
                 return;
             }
-
             if (isLoading) return;
 
-            // Annuler requête précédente
-            if (abortControllerRef.current) {
-                abortControllerRef.current.abort();
-            }
+            if (abortControllerRef.current) abortControllerRef.current.abort();
 
             setLastError(null);
             setShowSuggestions(false);
@@ -222,33 +239,21 @@ export function useChatbot(): UseChatbotReturn {
                     content: reply,
                     timestamp: new Date(),
                 };
-
                 setMessages((prev) => [...prev, assistantMessage]);
+                setIsDemoMode(false);
             } catch (error) {
-                if (error instanceof Error && error.name === 'AbortError') {
-                    return;
-                }
+                if (error instanceof Error && error.name === 'AbortError') return;
 
-                const isTimeout = error instanceof Error && error.message === 'timeout';
-                const errorContent =
-                    language === 'fr'
-                        ? isTimeout
-                            ? "Notre assistant met trop de temps à répondre. Veuillez réessayer ou contacter notre équipe à contact@sixoria.cm."
-                            : "Notre assistant rencontre momentanément une difficulté. Vous pouvez contacter directement notre équipe à contact@sixoria.cm."
-                        : isTimeout
-                            ? "Our assistant is taking too long to respond. Please try again or contact our team at contact@sixoria.cm."
-                            : "Our assistant is temporarily experiencing difficulties. You can contact our team directly at contact@sixoria.cm.";
-
-                const errorMessage: ChatMessage = {
+                // Basculer en mode démo si l'API n'est pas disponible
+                const demoReply = getDemoResponse(text, language);
+                const demoMessage: ChatMessage = {
                     id: generateId(),
                     role: 'assistant',
-                    content: errorContent,
+                    content: demoReply,
                     timestamp: new Date(),
-                    isError: true,
                 };
-
-                setMessages((prev) => [...prev, errorMessage]);
-                setLastError(errorContent);
+                setMessages((prev) => [...prev, demoMessage]);
+                setIsDemoMode(true);
             } finally {
                 setIsLoading(false);
                 abortControllerRef.current = null;
@@ -272,5 +277,6 @@ export function useChatbot(): UseChatbotReturn {
         showSuggestions,
         language,
         lastError,
+        isDemoMode,
     };
 }
