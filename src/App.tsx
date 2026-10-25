@@ -5,6 +5,7 @@ import './i18n';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ChatbotWidget from './components/chatbot/ChatbotWidget';
 
 import HomePage from './pages/HomePage';
 import DigitalPage from './pages/DigitalPage';
@@ -62,6 +63,7 @@ function App() {
           </div>
 
           <Footer />
+          <ChatbotWidget />
         </div>
       </BrowserRouter>
     </HelmetProvider>

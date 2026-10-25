@@ -90,10 +90,7 @@ const Footer: React.FC = () => {
                             ))}
                         </ul>
 
-                        {/* Contacts équipe */}
-                        <h3 className="text-white font-semibold text-xs uppercase tracking-widest mt-8 mb-4">
-                            {t('contact.team_contacts')}
-                        </h3>
+                       
                         <ul className="space-y-2">
                             {teamEmails.map(m => (
                                 <li key={m.email}>
