@@ -10,7 +10,7 @@ const SixoriaLogo: React.FC<SixoriaLogoProps> = ({ className = '', size = 48, va
 
     const Emblem = () => (
         <img
-            src="/sixoria_logo2.jpeg"
+            src="/sixoria_logo2.png"
             alt="Logo SIXORIA"
             width={size}
             height={size}
