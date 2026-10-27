@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Mail, Globe, MapPin, ArrowRight } from 'lucide-react';
+import { Globe, MapPin, ArrowRight } from 'lucide-react';
 import SixoriaLogo from './SixoriaLogo';
 
 const Footer: React.FC = () => {
@@ -19,13 +19,6 @@ const Footer: React.FC = () => {
         { to: '/digital', label: t('nav.digital') },
         { to: '/trading', label: t('nav.trading') },
         { to: '/legal', label: t('footer.legal_mentions') },
-    ];
-
-    const teamEmails = [
-        { name: 'Hapsatou', email: 'hapsatou@sixoria.cm' },
-        { name: 'Inoussa', email: 'inoussa@sixoria.cm' },
-        { name: 'Jamila', email: 'beulguibe@sixoria.cm' },
-        { name: 'Yasmine', email: 'ladi@sixoria.cm' },
     ];
 
     return (
@@ -89,22 +82,6 @@ const Footer: React.FC = () => {
                                 </li>
                             ))}
                         </ul>
-
-                       
-                        <ul className="space-y-2">
-                            {teamEmails.map(m => (
-                                <li key={m.email}>
-                                    <a
-                                        href={`mailto:${m.email}`}
-                                        className="text-cream-300 hover:text-gold-400 text-xs transition-colors duration-200 flex items-center gap-1.5 group"
-                                        aria-label={`Écrire à ${m.name}`}
-                                    >
-                                        <Mail size={11} className="opacity-60 group-hover:opacity-100 shrink-0" />
-                                        {m.email}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
                     </div>
 
                     {/* Contact général */}
@@ -113,15 +90,6 @@ const Footer: React.FC = () => {
                             {t('footer.contact_us')}
                         </h3>
                         <ul className="space-y-3 mb-6">
-                            <li className="flex items-start gap-2.5">
-                                <Mail size={14} className="text-gold-400 mt-0.5 shrink-0" />
-                                <a
-                                    href="mailto:contact@sixoria.cm"
-                                    className="text-cream-300 hover:text-gold-400 text-sm transition-colors"
-                                >
-                                    contact@sixoria.cm
-                                </a>
-                            </li>
                             <li className="flex items-start gap-2.5">
                                 <Globe size={14} className="text-gold-400 mt-0.5 shrink-0" />
                                 <a

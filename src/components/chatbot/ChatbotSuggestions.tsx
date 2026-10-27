@@ -3,7 +3,16 @@
 // ============================================================
 
 import React from 'react';
+import { ClipboardList, Monitor, Package, Phone, Sparkles } from 'lucide-react';
 import type { SuggestionItem } from '../../types/chatbot';
+
+const SUGGESTION_ICONS = {
+    'clipboard-list': ClipboardList,
+    monitor: Monitor,
+    package: Package,
+    phone: Phone,
+    sparkles: Sparkles,
+} satisfies Record<SuggestionItem['icon'], React.ComponentType<{ size?: number; className?: string }>>;
 
 interface ChatbotSuggestionsProps {
     suggestions: SuggestionItem[];
@@ -24,7 +33,9 @@ const ChatbotSuggestions: React.FC<ChatbotSuggestionsProps> = ({
                 {language === 'fr' ? 'Suggestions rapides' : 'Quick suggestions'}
             </p>
             <div className="grid grid-cols-2 gap-2">
-                {suggestions.map((s) => (
+                {suggestions.map((s) => {
+                    const Icon = SUGGESTION_ICONS[s.icon];
+                    return (
                     <button
                         key={s.id}
                         onClick={() => !disabled && onSelect(language === 'en' ? s.messageEn : s.message)}
@@ -51,10 +62,11 @@ const ChatbotSuggestions: React.FC<ChatbotSuggestionsProps> = ({
                         }}
                         aria-label={language === 'en' ? s.labelEn : s.label}
                     >
-                        <span className="text-base leading-none">{s.emoji}</span>
+                        <Icon size={16} className="shrink-0 text-gold-500" aria-hidden="true" />
                         <span className="leading-tight line-clamp-2">{language === 'en' ? s.labelEn : s.label}</span>
                     </button>
-                ))}
+                    );
+                })}
             </div>
         </div>
     );

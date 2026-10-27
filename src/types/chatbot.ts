@@ -35,7 +35,7 @@ export interface QuoteRequest {
 
 export interface SuggestionItem {
     id: string;
-    emoji: string;
+    icon: 'sparkles' | 'monitor' | 'package' | 'clipboard-list' | 'phone';
     label: string;
     labelEn: string;
     message: string;

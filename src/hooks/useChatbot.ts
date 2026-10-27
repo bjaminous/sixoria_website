@@ -21,7 +21,7 @@ const MAX_MESSAGE_LENGTH = 2000;
 const SUGGESTIONS: SuggestionItem[] = [
     {
         id: 'services',
-        emoji: '✨',
+        icon: 'sparkles',
         label: 'Découvrir nos services',
         labelEn: 'Discover our services',
         message: 'Quels services propose SIXORIA ?',
@@ -29,7 +29,7 @@ const SUGGESTIONS: SuggestionItem[] = [
     },
     {
         id: 'digital',
-        emoji: '💻',
+        icon: 'monitor',
         label: 'Découvrir le Pôle Digital',
         labelEn: 'Discover the Digital Division',
         message: 'Pouvez-vous me présenter le Pôle Digital de SIXORIA et ses services ?',
@@ -37,7 +37,7 @@ const SUGGESTIONS: SuggestionItem[] = [
     },
     {
         id: 'trading',
-        emoji: '📦',
+        icon: 'package',
         label: 'Découvrir le Pôle Trading',
         labelEn: 'Discover the Trading Division',
         message: 'Quels produits et services propose le Pôle Trading de SIXORIA ?',
@@ -45,7 +45,7 @@ const SUGGESTIONS: SuggestionItem[] = [
     },
     {
         id: 'quote',
-        emoji: '📋',
+        icon: 'clipboard-list',
         label: 'Demander un devis',
         labelEn: 'Request a quote',
         message: "Je souhaite demander un devis pour un projet. Pouvez-vous m'aider ?",
@@ -53,7 +53,7 @@ const SUGGESTIONS: SuggestionItem[] = [
     },
     {
         id: 'contact',
-        emoji: '📞',
+        icon: 'phone',
         label: 'Contacter notre équipe',
         labelEn: 'Contact our team',
         message: "Comment puis-je contacter l'équipe SIXORIA ?",
