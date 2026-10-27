@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { ClipboardList, Monitor, Package, Phone, Sparkles } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import type { SuggestionItem } from '../../types/chatbot';
 
 const SUGGESTION_ICONS = {
@@ -12,7 +13,7 @@ const SUGGESTION_ICONS = {
     package: Package,
     phone: Phone,
     sparkles: Sparkles,
-} satisfies Record<SuggestionItem['icon'], React.ComponentType<{ size?: number; className?: string }>>;
+} satisfies Record<SuggestionItem['icon'], LucideIcon>;
 
 interface ChatbotSuggestionsProps {
     suggestions: SuggestionItem[];
@@ -36,35 +37,35 @@ const ChatbotSuggestions: React.FC<ChatbotSuggestionsProps> = ({
                 {suggestions.map((s) => {
                     const Icon = SUGGESTION_ICONS[s.icon];
                     return (
-                    <button
-                        key={s.id}
-                        onClick={() => !disabled && onSelect(language === 'en' ? s.messageEn : s.message)}
-                        disabled={disabled}
-                        className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-left text-xs font-medium transition-all duration-200 group"
-                        style={{
-                            background: 'rgba(11,23,48,0.04)',
-                            border: '1px solid rgba(11,23,48,0.1)',
-                            color: '#0E2147',
-                            cursor: disabled ? 'not-allowed' : 'pointer',
-                            opacity: disabled ? 0.5 : 1,
-                        }}
-                        onMouseEnter={(e) => {
-                            if (!disabled) {
-                                (e.currentTarget as HTMLElement).style.background = 'rgba(212,154,36,0.08)';
-                                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,154,36,0.3)';
-                                (e.currentTarget as HTMLElement).style.color = '#B07D1E';
-                            }
-                        }}
-                        onMouseLeave={(e) => {
-                            (e.currentTarget as HTMLElement).style.background = 'rgba(11,23,48,0.04)';
-                            (e.currentTarget as HTMLElement).style.borderColor = 'rgba(11,23,48,0.1)';
-                            (e.currentTarget as HTMLElement).style.color = '#0E2147';
-                        }}
-                        aria-label={language === 'en' ? s.labelEn : s.label}
-                    >
-                        <Icon size={16} className="shrink-0 text-gold-500" aria-hidden="true" />
-                        <span className="leading-tight line-clamp-2">{language === 'en' ? s.labelEn : s.label}</span>
-                    </button>
+                        <button
+                            key={s.id}
+                            onClick={() => !disabled && onSelect(language === 'en' ? s.messageEn : s.message)}
+                            disabled={disabled}
+                            className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-left text-xs font-medium transition-all duration-200 group"
+                            style={{
+                                background: 'rgba(11,23,48,0.04)',
+                                border: '1px solid rgba(11,23,48,0.1)',
+                                color: '#0E2147',
+                                cursor: disabled ? 'not-allowed' : 'pointer',
+                                opacity: disabled ? 0.5 : 1,
+                            }}
+                            onMouseEnter={(e) => {
+                                if (!disabled) {
+                                    (e.currentTarget as HTMLElement).style.background = 'rgba(212,154,36,0.08)';
+                                    (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,154,36,0.3)';
+                                    (e.currentTarget as HTMLElement).style.color = '#B07D1E';
+                                }
+                            }}
+                            onMouseLeave={(e) => {
+                                (e.currentTarget as HTMLElement).style.background = 'rgba(11,23,48,0.04)';
+                                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(11,23,48,0.1)';
+                                (e.currentTarget as HTMLElement).style.color = '#0E2147';
+                            }}
+                            aria-label={language === 'en' ? s.labelEn : s.label}
+                        >
+                            <Icon size={16} className="shrink-0 text-gold-500" aria-hidden="true" />
+                            <span className="leading-tight line-clamp-2">{language === 'en' ? s.labelEn : s.label}</span>
+                        </button>
                     );
                 })}
             </div>
