@@ -68,7 +68,10 @@ const ContactPage: React.FC = () => {
     ) => {
         const { name, value } = e.target;
         setForm(prev => ({ ...prev, [name]: value }));
-        setServerError('');
+        if (status === 'error') {
+            setStatus('idle');
+            setServerError('');
+        }
         if (errors[name as keyof FormState]) {
             setErrors(prev => ({ ...prev, [name]: undefined }));
         }
@@ -234,15 +237,15 @@ const ContactPage: React.FC = () => {
                                                 id="website"
                                                 name="website"
                                                 type="text"
-                                                maxLength={120}
                                                 value={form.website}
                                                 onChange={handleChange}
+                                                disabled={status === 'sending'}
                                                 autoComplete="off"
                                                 tabIndex={-1}
                                             />
                                         </div>
                                         {status === 'error' && (
-                                            <div className="bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3">
+                                            <div className="bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3" role="alert">
                                                 <AlertCircle size={18} className="text-red-500 shrink-0 mt-0.5" />
                                                 <p className="text-red-700 text-sm">{serverError || t('contact.contact_error')}</p>
                                             </div>
@@ -258,9 +261,10 @@ const ContactPage: React.FC = () => {
                                                     id="name"
                                                     name="name"
                                                     type="text"
-                                                    maxLength={160}
+                                                    maxLength={120}
                                                     value={form.name}
                                                     onChange={handleChange}
+                                                    disabled={status === 'sending'}
                                                     className={inputClass('name')}
                                                     placeholder="Jean Dupont"
                                                     autoComplete="name"
@@ -280,8 +284,10 @@ const ContactPage: React.FC = () => {
                                                     id="company"
                                                     name="company"
                                                     type="text"
+                                                    maxLength={160}
                                                     value={form.company}
                                                     onChange={handleChange}
+                                                    disabled={status === 'sending'}
                                                     className="input-field"
                                                     placeholder="Ma Société SARL"
                                                     autoComplete="organization"
@@ -300,6 +306,7 @@ const ContactPage: React.FC = () => {
                                                     maxLength={254}
                                                     value={form.email}
                                                     onChange={handleChange}
+                                                    disabled={status === 'sending'}
                                                     className={inputClass('email')}
                                                     placeholder="nom@exemple.cm"
                                                     autoComplete="email"
@@ -322,6 +329,7 @@ const ContactPage: React.FC = () => {
                                                     maxLength={40}
                                                     value={form.phone}
                                                     onChange={handleChange}
+                                                    disabled={status === 'sending'}
                                                     className="input-field"
                                                     placeholder="+237 6XX XXX XXX"
                                                     autoComplete="tel"
@@ -338,6 +346,7 @@ const ContactPage: React.FC = () => {
                                                     name="pole"
                                                     value={form.pole}
                                                     onChange={handleChange}
+                                                    disabled={status === 'sending'}
                                                     className={inputClass('pole')}
                                                     aria-required="true"
                                                     aria-invalid={!!errors.pole}
@@ -365,6 +374,7 @@ const ContactPage: React.FC = () => {
                                                     maxLength={160}
                                                     value={form.subject}
                                                     onChange={handleChange}
+                                                    disabled={status === 'sending'}
                                                     className={inputClass('subject')}
                                                     placeholder="Demande de devis"
                                                     aria-required="true"
@@ -388,6 +398,7 @@ const ContactPage: React.FC = () => {
                                                 maxLength={5000}
                                                 value={form.message}
                                                 onChange={handleChange}
+                                                disabled={status === 'sending'}
                                                 className={inputClass('message')}
                                                 placeholder="Décrivez votre projet ou votre besoin..."
                                                 aria-required="true"
