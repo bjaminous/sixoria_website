@@ -20,6 +20,14 @@ const MAX_MESSAGE_LENGTH = 2000;
 // Suggestions initiales affichées au premier ouverture
 const SUGGESTIONS: SuggestionItem[] = [
     {
+        id: 'services',
+        emoji: '✨',
+        label: 'Découvrir nos services',
+        labelEn: 'Discover our services',
+        message: 'Quels services propose SIXORIA ?',
+        messageEn: 'What services does SIXORIA offer?',
+    },
+    {
         id: 'digital',
         emoji: '💻',
         label: 'Découvrir le Pôle Digital',
@@ -123,7 +131,7 @@ export function useChatbot(): UseChatbotReturn {
     const [lastError, setLastError] = useState<string | null>(null);
     const [showSuggestions, setShowSuggestions] = useState(true);
     const [hasLoadedSession, setHasLoadedSession] = useState(false);
-    const [isDemoMode, setIsDemoMode] = useState(false);
+    const [isDemoMode, setIsDemoMode] = useState(true);
 
     const abortControllerRef = useRef<AbortController | null>(null);
 
@@ -150,8 +158,8 @@ export function useChatbot(): UseChatbotReturn {
     const getWelcomeMessage = useCallback((): ChatMessage => {
         const content =
             language === 'en'
-                ? `Hello 👋! Welcome to SIXORIA SARL.\n\nI'm SIXORIA AI, your virtual assistant.\n\nI'm here to guide you through our services and help you find the solutions that best fit your needs.\n\nHow can I help you today?`
-                : `Bonjour 👋 ! Bienvenue chez SIXORIA SARL.\n\nJe suis SIXORIA AI, votre assistant virtuel.\n\nJe suis ici pour vous accompagner dans la découverte de nos services et vous aider à trouver les solutions adaptées à vos besoins.\n\nComment puis-je vous aider aujourd'hui ?`;
+                ? `Hello 👋 Welcome to SIXORIA!\n\nI'm SIXORIA AI, your virtual assistant.\n\nHow can I help you today?`
+                : `Bonjour 👋 Bienvenue chez SIXORIA !\n\nJe suis SIXORIA AI, votre assistant virtuel.\n\nComment puis-je vous accompagner aujourd'hui ?`;
 
         return {
             id: generateId(),
@@ -185,7 +193,7 @@ export function useChatbot(): UseChatbotReturn {
         setShowSuggestions(true);
         setLastError(null);
         setInputValue('');
-        setIsDemoMode(false);
+        setIsDemoMode(true);
         clearSessionStorage();
     }, [getWelcomeMessage]);
 

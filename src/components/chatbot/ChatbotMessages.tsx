@@ -59,7 +59,8 @@ const ChatbotMessages: React.FC<ChatbotMessagesProps> = ({
 
     // Défilement automatique vers le bas
     useEffect(() => {
-        bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+        const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+        bottomRef.current?.scrollIntoView({ behavior });
     }, [messages, isLoading]);
 
     return (

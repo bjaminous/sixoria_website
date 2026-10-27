@@ -10,6 +10,14 @@ export const useReveal = (options: UseRevealOptions = {}) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
+        if (
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+            !('IntersectionObserver' in window)
+        ) {
+            setIsVisible(true);
+            return;
+        }
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
@@ -59,7 +67,9 @@ export const Reveal: React.FC<RevealProps> = ({
                     ? 'opacity-100 translate-y-0 translate-x-0'
                     : `opacity-0 ${directionClass}`
                 } ${className}`}
-            style={{ transitionDelay: `${delay}ms` }}
+            style={{
+                transitionDelay: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? '0ms' : `${delay}ms`,
+            }}
         >
             {children}
         </div>

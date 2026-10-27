@@ -9,7 +9,7 @@ export const SIXORIA_KNOWLEDGE = {
         name: 'SIXORIA SARL',
         slogan: 'Agiles pour vous.',
         type: 'Entreprise familiale camerounaise',
-        location: 'Yaoundé, Cameroun',
+        location: 'Douala, Cameroun',
         website: 'www.sixoria.cm',
         generalEmail: 'contact@sixoria.cm',
         description:

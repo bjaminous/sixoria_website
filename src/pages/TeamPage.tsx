@@ -103,7 +103,7 @@ const TeamPage: React.FC = () => {
                                                 </p>
                                                 <a
                                                     href={`mailto:${email}`}
-                                                    className="inline-flex items-center gap-2 text-sm text-forest-700 hover:text-gold-600 font-medium transition-colors duration-200 group"
+                                                    className="btn-outline-forest mt-3 w-full justify-center px-3 py-2 text-xs"
                                                     aria-label={`Envoyer un e-mail à ${name} : ${email}`}
                                                 >
                                                     <Mail size={14} className="shrink-0 group-hover:text-gold-500 transition-colors" />

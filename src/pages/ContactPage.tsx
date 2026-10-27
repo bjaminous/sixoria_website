@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Mail, Globe, MapPin, MessageCircle, Send, CheckCircle, AlertCircle, Info } from 'lucide-react';
+import { Mail, Globe, MapPin, MessageCircle, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { Reveal } from '../components/Reveal';
 
 interface FormState {
@@ -11,6 +12,7 @@ interface FormState {
     pole: string;
     subject: string;
     message: string;
+    website: string;
 }
 
 const initialForm: FormState = {
@@ -21,22 +23,42 @@ const initialForm: FormState = {
     pole: '',
     subject: '',
     message: '',
+    website: '',
 };
 
+const WHATSAPP_NUMBER = (import.meta.env.VITE_WHATSAPP_NUMBER || '237621961547').replace(/\D/g, '');
+
 const ContactPage: React.FC = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const [searchParams] = useSearchParams();
     const [form, setForm] = useState<FormState>(initialForm);
     const [errors, setErrors] = useState<Partial<FormState>>({});
     const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+    const [serverError, setServerError] = useState('');
+
+    useEffect(() => {
+        const pack = searchParams.get('pack');
+        if (!pack || !['pme', 'office', 'digital'].includes(pack)) return;
+
+        setForm((current) => ({
+            ...current,
+            subject: t(`offers.${pack}.title`),
+            pole: pack === 'office' ? 'trading' : 'digital',
+        }));
+    }, [searchParams, t]);
 
     const validate = (): boolean => {
         const newErrors: Partial<FormState> = {};
         if (!form.name.trim()) newErrors.name = t('contact.required');
-        if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
-            newErrors.email = t('contact.required');
+        else if (form.name.length > 120) newErrors.name = t('contact.too_long');
+        if (!form.email.trim()) newErrors.email = t('contact.required');
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = t('contact.invalid_email');
+        else if (form.email.length > 254) newErrors.email = t('contact.too_long');
         if (!form.pole) newErrors.pole = t('contact.required');
         if (!form.subject.trim()) newErrors.subject = t('contact.required');
+        else if (form.subject.length > 160) newErrors.subject = t('contact.too_long');
         if (!form.message.trim()) newErrors.message = t('contact.required');
+        else if (form.message.length > 5000) newErrors.message = t('contact.too_long');
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
@@ -46,6 +68,7 @@ const ContactPage: React.FC = () => {
     ) => {
         const { name, value } = e.target;
         setForm(prev => ({ ...prev, [name]: value }));
+        setServerError('');
         if (errors[name as keyof FormState]) {
             setErrors(prev => ({ ...prev, [name]: undefined }));
         }
@@ -57,14 +80,27 @@ const ContactPage: React.FC = () => {
 
         setStatus('sending');
 
-        // Simulation — À remplacer par EmailJS ou API backend
-        // TODO: Configurer EmailJS avec les variables VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY
         try {
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            // En production: await emailjs.send(serviceId, templateId, form, publicKey);
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    ...form,
+                    language: i18n.language.startsWith('en') ? 'en' : 'fr',
+                }),
+            });
+            const result = await response.json() as { ok?: unknown; error?: unknown };
+            if (!response.ok || result.ok !== true) {
+                throw new Error(
+                    typeof result.error === 'string' ? result.error : t('contact.contact_error')
+                );
+            }
+
             setStatus('success');
             setForm(initialForm);
-        } catch {
+            setServerError('');
+        } catch (error) {
+            setServerError(error instanceof Error ? error.message : t('contact.contact_error'));
             setStatus('error');
         }
     };
@@ -125,7 +161,9 @@ const ContactPage: React.FC = () => {
                                             </div>
                                             <div>
                                                 <p className="text-xs text-gray-500 font-medium uppercase tracking-wide mb-0.5">{t('contact.website_label')}</p>
-                                                <span className="text-forest-700 text-sm font-medium">sixoria.cm</span>
+                                                <a href="https://www.sixoria.cm" target="_blank" rel="noopener noreferrer" className="text-forest-700 text-sm font-medium hover:text-gold-600 transition-colors">
+                                                    www.sixoria.cm
+                                                </a>
                                             </div>
                                         </li>
                                         <li className="flex items-start gap-3">
@@ -148,11 +186,11 @@ const ContactPage: React.FC = () => {
                                     </div>
                                     <p className="text-gray-500 text-xs mb-4">{t('contact.whatsapp_notice')}</p>
                                     <a
-                                        href="https://wa.me/XXXXXXXXX"
+                                        href={`https://wa.me/${WHATSAPP_NUMBER}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-2 w-full justify-center py-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold rounded-xl transition-colors text-sm"
-                                        title="Numéro à configurer"
+                                        aria-label={t('contact.whatsapp_cta')}
                                     >
                                         <MessageCircle size={16} />
                                         {t('contact.whatsapp_cta')}
@@ -190,10 +228,23 @@ const ContactPage: React.FC = () => {
                                     </div>
                                 ) : (
                                     <form onSubmit={handleSubmit} noValidate className="space-y-6">
+                                        <div className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+                                            <label htmlFor="website">{t('contact.honeypot_label')}</label>
+                                            <input
+                                                id="website"
+                                                name="website"
+                                                type="text"
+                                                maxLength={120}
+                                                value={form.website}
+                                                onChange={handleChange}
+                                                autoComplete="off"
+                                                tabIndex={-1}
+                                            />
+                                        </div>
                                         {status === 'error' && (
                                             <div className="bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3">
                                                 <AlertCircle size={18} className="text-red-500 shrink-0 mt-0.5" />
-                                                <p className="text-red-700 text-sm">{t('contact.error_text')}</p>
+                                                <p className="text-red-700 text-sm">{serverError || t('contact.contact_error')}</p>
                                             </div>
                                         )}
 
@@ -207,6 +258,7 @@ const ContactPage: React.FC = () => {
                                                     id="name"
                                                     name="name"
                                                     type="text"
+                                                    maxLength={160}
                                                     value={form.name}
                                                     onChange={handleChange}
                                                     className={inputClass('name')}
@@ -245,6 +297,7 @@ const ContactPage: React.FC = () => {
                                                     id="email"
                                                     name="email"
                                                     type="email"
+                                                    maxLength={254}
                                                     value={form.email}
                                                     onChange={handleChange}
                                                     className={inputClass('email')}
@@ -266,6 +319,7 @@ const ContactPage: React.FC = () => {
                                                     id="phone"
                                                     name="phone"
                                                     type="tel"
+                                                    maxLength={40}
                                                     value={form.phone}
                                                     onChange={handleChange}
                                                     className="input-field"
@@ -288,7 +342,7 @@ const ContactPage: React.FC = () => {
                                                     aria-required="true"
                                                     aria-invalid={!!errors.pole}
                                                 >
-                                                    <option value="">— Sélectionner —</option>
+                                                    <option value="">{t('contact.select_placeholder')}</option>
                                                     <option value="digital">{t('contact.pole_digital')}</option>
                                                     <option value="trading">{t('contact.pole_trading')}</option>
                                                     <option value="both">{t('contact.pole_both')}</option>
@@ -308,6 +362,7 @@ const ContactPage: React.FC = () => {
                                                     id="subject"
                                                     name="subject"
                                                     type="text"
+                                                    maxLength={160}
                                                     value={form.subject}
                                                     onChange={handleChange}
                                                     className={inputClass('subject')}
@@ -330,6 +385,7 @@ const ContactPage: React.FC = () => {
                                                 id="message"
                                                 name="message"
                                                 rows={6}
+                                                maxLength={5000}
                                                 value={form.message}
                                                 onChange={handleChange}
                                                 className={inputClass('message')}

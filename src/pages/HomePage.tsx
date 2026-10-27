@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
-    Monitor, ShoppingBag, ArrowRight, MessageCircle,
+    Monitor, ShoppingBag, ArrowRight,
     ChevronDown, Shield, Zap, Users, Globe, Star, Lightbulb
 } from 'lucide-react';
 import { Reveal } from '../components/Reveal';
+import SixoriaLogo from '../components/SixoriaLogo';
 
 // Particle/Background Decoration
 const HeroDecoration: React.FC = () => (
@@ -51,74 +52,81 @@ const HomePage: React.FC = () => {
                 <HeroDecoration />
 
                 <div className="container-max relative z-10 py-32">
-                    <div className="max-w-3xl">
-                        <Reveal direction="up">
-                            <span className="badge bg-gold-500/20 text-gold-300 border border-gold-500/30 mb-6">
-                                ✦ {t('hero.badge')}
-                            </span>
-                        </Reveal>
+                    <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_.8fr]">
+                        <div className="max-w-3xl">
+                            <Reveal direction="up">
+                                <span className="badge bg-gold-500/20 text-gold-300 border border-gold-500/30 mb-6">
+                                    ✦ {t('hero.badge')} · {t('nav.tagline')}
+                                </span>
+                            </Reveal>
 
-                        <Reveal delay={100}>
-                            <h1
-                                id="hero-heading"
-                                className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
-                            >
-                                {t('hero.title')}
-                            </h1>
-                        </Reveal>
-
-                        <Reveal delay={200}>
-                            <p className="text-lg md:text-xl text-cream-200 leading-relaxed mb-10 max-w-2xl">
-                                {t('hero.subtitle')}
-                            </p>
-                        </Reveal>
-
-                        <Reveal delay={300}>
-                            <div className="flex flex-col sm:flex-row gap-4 mb-16">
-                                <Link
-                                    to="/services"
-                                    className="btn-primary text-base px-8 py-4"
-                                    id="hero-cta-services"
+                            <Reveal delay={100}>
+                                <h1
+                                    id="hero-heading"
+                                    className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
                                 >
-                                    {t('hero.cta_services')}
-                                    <ArrowRight size={18} />
-                                </Link>
-                                <Link
-                                    to="/contact"
-                                    className="btn-secondary text-base px-8 py-4"
-                                    id="hero-cta-quote"
-                                >
-                                    {t('hero.cta_quote')}
-                                </Link>
-                                <a
-                                    href="https://wa.me/XXXXXXXXX"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 px-8 py-4 bg-[#25D366]/90 hover:bg-[#25D366] text-white font-semibold rounded-lg transition-all duration-200 text-base"
-                                    id="hero-cta-whatsapp"
-                                    title="Le numéro WhatsApp sera configuré par l'équipe SIXORIA"
-                                >
-                                    <MessageCircle size={18} />
-                                    {t('hero.cta_whatsapp')}
-                                </a>
-                            </div>
-                        </Reveal>
+                                    {t('hero.title')}
+                                </h1>
+                            </Reveal>
 
-                        {/* Stats / Badges */}
-                        <Reveal delay={400}>
-                            <div className="flex flex-wrap gap-6">
-                                <div className="glass-card px-4 py-3 flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-gold-400 animate-pulse-slow"></div>
-                                    <span className="text-cream-200 text-sm font-medium">Pôle Digital</span>
+                            <Reveal delay={200}>
+                                <p className="text-lg md:text-xl text-cream-200 leading-relaxed mb-10 max-w-2xl">
+                                    {t('hero.subtitle')}
+                                </p>
+                            </Reveal>
+
+                            <Reveal delay={300}>
+                                <div className="flex flex-col sm:flex-row gap-4 mb-16">
+                                    <Link
+                                        to="/services"
+                                        className="btn-primary text-base px-8 py-4"
+                                        id="hero-cta-services"
+                                    >
+                                        {t('hero.cta_services')}
+                                        <ArrowRight size={18} />
+                                    </Link>
+                                    <Link
+                                        to="/contact"
+                                        className="btn-secondary text-base px-8 py-4"
+                                        id="hero-cta-quote"
+                                    >
+                                        {t('hero.cta_quote')}
+                                    </Link>
+                                    <Link
+                                        to="/contact"
+                                        className="btn-secondary text-base px-8 py-4"
+                                        id="hero-cta-contact"
+                                    >
+                                        {t('hero.cta_contact')}
+                                    </Link>
                                 </div>
-                                <div className="glass-card px-4 py-3 flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-sage-400 animate-pulse-slow"></div>
-                                    <span className="text-cream-200 text-sm font-medium">Pôle Trading</span>
+                            </Reveal>
+
+                            <Reveal delay={400}>
+                                <div className="flex flex-wrap gap-6">
+                                    <div className="glass-card px-4 py-3 flex items-center gap-2">
+                                        <div className="w-2 h-2 rounded-full bg-gold-400 animate-pulse-slow"></div>
+                                        <span className="text-cream-200 text-sm font-medium">Pôle Digital</span>
+                                    </div>
+                                    <div className="glass-card px-4 py-3 flex items-center gap-2">
+                                        <div className="w-2 h-2 rounded-full bg-sage-400 animate-pulse-slow"></div>
+                                        <span className="text-cream-200 text-sm font-medium">Pôle Trading</span>
+                                    </div>
+                                    <div className="glass-card px-4 py-3 flex items-center gap-2">
+                                        <div className="w-2 h-2 rounded-full bg-terracotta-400 animate-pulse-slow"></div>
+                                        <span className="text-cream-200 text-sm font-medium">6 Associés</span>
+                                    </div>
                                 </div>
-                                <div className="glass-card px-4 py-3 flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-terracotta-400 animate-pulse-slow"></div>
-                                    <span className="text-cream-200 text-sm font-medium">6 Associés</span>
-                                </div>
+                            </Reveal>
+                        </div>
+
+                        <Reveal direction="right" className="hidden lg:flex justify-center">
+                            <div className="relative grid h-80 w-80 place-items-center rounded-full border border-gold-400/30 bg-white/5 shadow-2xl shadow-black/20">
+                                <div className="absolute inset-5 rounded-full border border-white/10" aria-hidden="true" />
+                                <SixoriaLogo size={220} variant="emblem" className="relative z-10 drop-shadow-2xl" />
+                                <span className="absolute -bottom-4 rounded-full border border-gold-400/30 bg-forest-900 px-5 py-2 text-sm font-semibold tracking-widest text-gold-300">
+                                    SIXORIA SARL
+                                </span>
                             </div>
                         </Reveal>
                     </div>
@@ -225,7 +233,7 @@ const HomePage: React.FC = () => {
                                             ))}
                                         </ul>
                                         <Link
-                                            to="/contact"
+                                            to={`/contact?pack=${key}`}
                                             className={`btn-outline-forest w-full justify-center`}
                                         >
                                             {t('offers.contact_cta')}

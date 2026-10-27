@@ -1,32 +1,26 @@
-# React + TypeScript + Vite
+# SIXORIA SARL website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+The website is a React, TypeScript, and Vite application. The active site entry point is `src/main.tsx`; `public/Sixoria_Site_V2.html` is a legacy standalone page.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```sh
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Run `npm run typecheck` and `npm run build` to validate changes and create the production bundle.
+
+## Contact form
+
+The form submits to the Vercel serverless endpoint at `/api/contact`. To send real email, configure these server-side environment variables in Vercel:
+
+- `RESEND_API_KEY` — Resend API key.
+- `CONTACT_FROM_EMAIL` — sender address verified with Resend.
+- `CONTACT_TO_EMAIL` — recipient address (defaults to `contact@sixoria.cm`).
+
+Do not add these secrets to `VITE_` variables or commit them. The form reports an error instead of success when the endpoint or provider is unavailable. The Vercel CLI's `vercel dev` can be used to run the serverless endpoint locally.
+
+## WhatsApp and SIXORIA AI
+
+`VITE_WHATSAPP_NUMBER` may override the existing WhatsApp number (`237621961547`). `VITE_CHATBOT_API_URL` selects the backend chat endpoint. Configure `OPENROUTER_API_KEY` or `OPENAI_API_KEY` only in the server environment; never expose an AI provider key to the browser. Without a working AI backend, SIXORIA AI uses its clearly labeled demo responses based on the site's company information.

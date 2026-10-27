@@ -10,9 +10,10 @@ interface ChatbotHeaderProps {
     onClose: () => void;
     onMinimize: () => void;
     language: 'fr' | 'en';
+    isDemoMode: boolean;
 }
 
-const ChatbotHeader: React.FC<ChatbotHeaderProps> = ({ onClose, onMinimize, language }) => {
+const ChatbotHeader: React.FC<ChatbotHeaderProps> = ({ onClose, onMinimize, language, isDemoMode }) => {
     return (
         <div
             className="chatbot-header flex items-center justify-between px-4 py-3"
@@ -33,8 +34,8 @@ const ChatbotHeader: React.FC<ChatbotHeaderProps> = ({ onClose, onMinimize, lang
                     {/* Indicateur de disponibilité */}
                     <span
                         className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full border-2"
-                        style={{ backgroundColor: '#22c55e', borderColor: '#0B1730' }}
-                        aria-label={language === 'fr' ? 'En ligne' : 'Online'}
+                        style={{ backgroundColor: isDemoMode ? '#eab308' : '#22c55e', borderColor: '#0B1730' }}
+                        aria-label={isDemoMode ? (language === 'fr' ? 'Mode démonstration' : 'Demo mode') : (language === 'fr' ? 'Connecté' : 'Connected')}
                     />
                 </div>
 
@@ -43,13 +44,19 @@ const ChatbotHeader: React.FC<ChatbotHeaderProps> = ({ onClose, onMinimize, lang
                         <span className="font-bold text-white text-sm leading-tight">SIXORIA AI</span>
                         <span
                             className="text-xs px-1.5 py-0.5 rounded-full font-medium"
-                            style={{ background: 'rgba(212,154,36,0.2)', color: '#D49A24', border: '1px solid rgba(212,154,36,0.3)' }}
+                            style={{
+                                background: isDemoMode ? 'rgba(234,179,8,0.15)' : 'rgba(34,197,94,0.15)',
+                                color: isDemoMode ? '#facc15' : '#4ade80',
+                                border: `1px solid ${isDemoMode ? 'rgba(234,179,8,0.3)' : 'rgba(34,197,94,0.3)'}`,
+                            }}
                         >
-                            {language === 'fr' ? 'En ligne' : 'Online'}
+                            {isDemoMode
+                                ? (language === 'fr' ? 'Mode démo' : 'Demo mode')
+                                : (language === 'fr' ? 'Connecté' : 'Connected')}
                         </span>
                     </div>
                     <p className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                        {language === 'fr' ? 'Assistant virtuel' : 'Virtual assistant'}
+                        {language === 'fr' ? 'Votre assistant virtuel' : 'Your virtual assistant'}
                     </p>
                 </div>
             </div>

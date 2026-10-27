@@ -97,6 +97,7 @@ const ChatbotWidget: React.FC = () => {
                         onClose={closeChatbot}
                         onMinimize={minimizeChatbot}
                         language={language}
+                        isDemoMode={isDemoMode}
                     />
 
                     <ChatbotMessages
@@ -203,7 +204,10 @@ const ChatbotWidget: React.FC = () => {
                         {/* Indicateur vert */}
                         <span
                             className="absolute top-1 right-1 w-3 h-3 rounded-full border-2"
-                            style={{ backgroundColor: '#22c55e', borderColor: '#0B1730' }}
+                            style={{
+                                backgroundColor: isDemoMode ? '#eab308' : '#22c55e',
+                                borderColor: '#0B1730',
+                            }}
                             aria-hidden="true"
                         />
                     </span>

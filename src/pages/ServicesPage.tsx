@@ -94,7 +94,7 @@ const ServicesPage: React.FC = () => {
                                             <span>⚠</span>
                                             <span>Tarifs et contenu exact à confirmer avec l'équipe SIXORIA</span>
                                         </p>
-                                        <Link to="/contact" className={`${btnClass} w-full justify-center`}>
+                                        <Link to={`/contact?pack=${key}`} className={`${btnClass} w-full justify-center`}>
                                             {t('offers.contact_cta')} <ArrowRight size={15} />
                                         </Link>
                                     </div>
