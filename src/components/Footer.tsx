@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
             <div className="border-t border-forest-700">
                 <div className="container-max py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-cream-400">
                     <p>© {new Date().getFullYear()} SIXORIA SARL. {t('footer.rights')}</p>
-                    <p>{t('footer.made_with')}</p>
+                    {/* <p>{t('footer.made_with')}</p> */}
                     <div className="flex items-center gap-4">
                         <Link to="/legal" className="hover:text-gold-400 transition-colors">
                             {t('footer.legal_mentions')}
